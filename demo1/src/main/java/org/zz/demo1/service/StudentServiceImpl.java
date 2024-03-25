@@ -23,6 +23,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student findByName(String name) {
+        return studentMapper.findByName(name);
+    }
+
+    @Override
     public boolean save(Student student) {
         int affectedRows = studentMapper.save(student);
         return affectedRows > 0;

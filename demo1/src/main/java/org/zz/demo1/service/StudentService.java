@@ -14,4 +14,6 @@ public interface StudentService {
     public boolean update(Student student);
 
     public boolean delete(Long id);
+
+    public Student findByName(String name);
 }

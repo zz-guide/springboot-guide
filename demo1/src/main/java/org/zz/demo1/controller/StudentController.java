@@ -1,6 +1,7 @@
 package org.zz.demo1.controller;
 
 import jakarta.validation.Valid;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import org.zz.demo1.common.ResponseResult;
 import org.zz.demo1.domain.entity.Student;
 import org.zz.demo1.domain.request.student.StudentCreate;
+import org.zz.demo1.domain.request.student.StudentDelete;
 import org.zz.demo1.domain.request.student.StudentDetail;
+import org.zz.demo1.domain.request.student.StudentUpdate;
 import org.zz.demo1.service.StudentService;
 
 @RestController
@@ -23,24 +26,65 @@ public class StudentController {
 
     @GetMapping("/detail")
     public ResponseResult<?> detail(@Valid StudentDetail params) {
-        Student student = studentService.findById(params.getId());
+        var student = studentService.findById(params.getId());
         if (student == null) {
-            return ResponseResult.fail("查询失败，请重试");
+            return ResponseResult.fail("学生不存在");
         }
 
-        log.info("asldkjhlasjdlkjasdlk");
+        log.info("student detail success");
         return ResponseResult.success(student);
     }
 
     @PostMapping("/create")
     public ResponseResult<?> create(@Validated @RequestBody StudentCreate params) {
-        Student student = new Student();
-        student.setName(params.getName());
-        student.setAge(params.getAge());
-        if (!studentService.save(student)) {
-            return ResponseResult.fail("学生创建失败，请重试");
+        if (studentService.findByName(params.getName()) != null) {
+            return ResponseResult.fail("学生姓名已存在，请更换");
         }
 
+        var student = Student.builder().name(params.getName()).age(params.getAge()).build();
+        if (!studentService.save(student)) {
+            return ResponseResult.fail("创建学生失败，请重试");
+        }
+
+        log.info("student create success");
+        return ResponseResult.success();
+    }
+
+    @PostMapping("/update")
+    public ResponseResult<?> update(@Validated @RequestBody StudentUpdate params) {
+        var student = studentService.findById(params.getId());
+        if (student == null) {
+            return ResponseResult.fail("学生不存在");
+        }
+
+        if (StringUtils.isBlank(params.getName())) {
+            student.setName(params.getName());
+        }
+
+        if (params.getAge() > 0) {
+            student.setAge(params.getAge());
+        }
+
+        if (!studentService.update(student)) {
+            return ResponseResult.fail("更新学生失败，请重试");
+        }
+
+        log.info("student update success");
+        return ResponseResult.success();
+    }
+
+    @PostMapping("/delete")
+    public ResponseResult<?> delete(@Validated @RequestBody StudentDelete params) {
+        var student = studentService.findById(params.getId());
+        if (student == null) {
+            return ResponseResult.fail("学生不存在");
+        }
+
+        if (!studentService.delete(params.getId())) {
+            return ResponseResult.fail("删除学生失败，请重试");
+        }
+
+        log.info("student delete success");
         return ResponseResult.success();
     }
 }

@@ -21,4 +21,7 @@ public interface StudentMapper {
 
     @Delete("delete from student where id=#{id}")
     public int delete(Long id);
+
+    @Select("select * from student where name = #{name};")
+    public Student findByName(String name);
 }
