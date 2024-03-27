@@ -19,10 +19,13 @@ import org.zz.demo1.service.StudentService;
 @RestController
 @RequestMapping("/student")
 public class StudentController {
-    @Autowired
-    private StudentService studentService;
+    private final StudentService studentService;
 
     Logger log = LoggerFactory.getLogger(this.getClass());
+
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @GetMapping("/detail")
     public ResponseResult<?> detail(@Valid StudentDetail params) {

@@ -6,6 +6,9 @@
 
 # Mybatis
 - [x] 简单的curd
+- [x] 声明式事务-注解
+- [x] 编程式事务-手动写
+
 
 # MybatisPlus [不推荐]
 
@@ -23,3 +26,6 @@
 - [] validation fast fail
 - [] 日期时间类型字段如何对应
 - [] 创建时间默认填充
+
+## 注意的点
+- @Autowired 建议替换成构造函数注入方式，或者使用@Resource
