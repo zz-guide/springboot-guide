@@ -4,16 +4,15 @@ import jakarta.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import org.zz.demo1.common.ResponseResult;
 import org.zz.demo1.domain.entity.Student;
-import org.zz.demo1.domain.request.student.StudentCreate;
-import org.zz.demo1.domain.request.student.StudentDelete;
-import org.zz.demo1.domain.request.student.StudentDetail;
-import org.zz.demo1.domain.request.student.StudentUpdate;
+import org.zz.demo1.domain.api.student.StudentCreateRequest;
+import org.zz.demo1.domain.api.student.StudentDeleteRequest;
+import org.zz.demo1.domain.api.student.StudentDetailRequest;
+import org.zz.demo1.domain.api.student.StudentUpdateRequest;
 import org.zz.demo1.service.StudentService;
 
 @RestController
@@ -28,7 +27,7 @@ public class StudentController {
     }
 
     @GetMapping("/detail")
-    public ResponseResult<?> detail(@Valid StudentDetail params) {
+    public ResponseResult<?> detail(@Valid StudentDetailRequest params) {
         var student = studentService.findById(params.getId());
         if (student == null) {
             return ResponseResult.fail("学生不存在");
@@ -39,7 +38,7 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public ResponseResult<?> create(@Validated @RequestBody StudentCreate params) {
+    public ResponseResult<?> create(@Validated @RequestBody StudentCreateRequest params) {
         if (studentService.findByName(params.getName()) != null) {
             return ResponseResult.fail("学生姓名已存在，请更换");
         }
@@ -54,7 +53,7 @@ public class StudentController {
     }
 
     @PostMapping("/update")
-    public ResponseResult<?> update(@Validated @RequestBody StudentUpdate params) {
+    public ResponseResult<?> update(@Validated @RequestBody StudentUpdateRequest params) {
         var student = studentService.findById(params.getId());
         if (student == null) {
             return ResponseResult.fail("学生不存在");
@@ -77,7 +76,7 @@ public class StudentController {
     }
 
     @PostMapping("/delete")
-    public ResponseResult<?> delete(@Validated @RequestBody StudentDelete params) {
+    public ResponseResult<?> delete(@Validated @RequestBody StudentDeleteRequest params) {
         var student = studentService.findById(params.getId());
         if (student == null) {
             return ResponseResult.fail("学生不存在");

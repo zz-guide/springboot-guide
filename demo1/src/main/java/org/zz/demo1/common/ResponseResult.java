@@ -28,7 +28,6 @@ public class ResponseResult<T> {
         responseResult.setStatus(status);
         responseResult.setMessage(message);
         responseResult.setData(data);
-        responseResult.setData(data);
         responseResult.setDefaultTime();
         return responseResult;
     }

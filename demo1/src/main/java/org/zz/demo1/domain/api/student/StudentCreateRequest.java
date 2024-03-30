@@ -1,4 +1,4 @@
-package org.zz.demo1.domain.request.student;
+package org.zz.demo1.domain.api.student;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentCreate {
+public class StudentCreateRequest {
     @NotBlank(message = "姓名不能为空")
     private String name;
 

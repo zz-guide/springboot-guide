@@ -1,7 +1,6 @@
 package org.zz.demo1.service;
 
 import org.zz.demo1.domain.entity.Teacher;
-import org.zz.demo1.exception.MyException;
 
 import java.util.List;
 

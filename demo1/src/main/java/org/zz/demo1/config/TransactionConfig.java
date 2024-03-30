@@ -1,5 +1,6 @@
 package org.zz.demo1.config;
 
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,12 +14,11 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class TransactionConfig {
 
-    @Autowired
+    @Resource
     private DataSource dataSource;
 
     @Bean
     public PlatformTransactionManager transactionManager() {
-        System.out.println(dataSource.toString());
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
         transactionManager.setDataSource(dataSource);
         return transactionManager;
