@@ -1,4 +1,4 @@
-package org.zz.demo1.domain.api.user;
+package org.zz.demo1.domain.request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

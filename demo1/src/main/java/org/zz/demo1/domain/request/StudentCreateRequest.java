@@ -1,4 +1,4 @@
-package org.zz.demo1.domain.api.student;
+package org.zz.demo1.domain.request;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

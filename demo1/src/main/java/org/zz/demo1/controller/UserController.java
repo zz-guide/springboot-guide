@@ -4,10 +4,10 @@ import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import org.zz.demo1.common.ResponseResult;
-import org.zz.demo1.domain.api.user.UserOrderListResponse;
+import org.zz.demo1.domain.vo.UserOrderListVo;
 import org.zz.demo1.domain.entity.User;
-import org.zz.demo1.domain.api.user.UserCreateRequest;
-import org.zz.demo1.domain.api.user.UserOrderListRequest;
+import org.zz.demo1.domain.request.UserCreateRequest;
+import org.zz.demo1.domain.request.UserOrderListRequest;
 import org.zz.demo1.service.UserService;
 
 @RestController
@@ -36,7 +36,7 @@ public class UserController {
         System.out.println("user_id:" + params.getUserId());
         var user = userService.findById(params.getUserId());
         // 返回结果可以优化
-        var res = UserOrderListResponse.builder()
+        var res = UserOrderListVo.builder()
                 .orderList(user.getOrderList())
                 .id(user.getId())
                 .name(user.getName())

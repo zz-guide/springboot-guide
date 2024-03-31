@@ -5,7 +5,7 @@ import org.zz.demo1.domain.entity.Student;
 import java.util.List;
 
 public interface StudentService {
-    public List<Student> findAll();
+    public List<Student> findAll(Integer p, Integer pn);
 
     public Student findById(Long id);
 
@@ -16,4 +16,6 @@ public interface StudentService {
     public boolean delete(Long id);
 
     public Student findByName(String name);
+
+    public boolean batchSave(List<Student> students);
 }

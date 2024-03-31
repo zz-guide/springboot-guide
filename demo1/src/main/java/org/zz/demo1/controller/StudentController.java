@@ -1,5 +1,7 @@
 package org.zz.demo1.controller;
 
+import com.github.pagehelper.PageInfo;
+import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -9,21 +11,26 @@ import org.springframework.web.bind.annotation.*;
 
 import org.zz.demo1.common.ResponseResult;
 import org.zz.demo1.domain.entity.Student;
-import org.zz.demo1.domain.api.student.StudentCreateRequest;
-import org.zz.demo1.domain.api.student.StudentDeleteRequest;
-import org.zz.demo1.domain.api.student.StudentDetailRequest;
-import org.zz.demo1.domain.api.student.StudentUpdateRequest;
+import org.zz.demo1.domain.request.*;
 import org.zz.demo1.service.StudentService;
 
 @RestController
 @RequestMapping("/student")
 public class StudentController {
-    private final StudentService studentService;
+    @Resource
+    private StudentService studentService;
 
     Logger log = LoggerFactory.getLogger(this.getClass());
 
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
+    @GetMapping("/search")
+    public ResponseResult<?> search(@Valid StudentSearchRequest params) {
+        var students = studentService.findAll(params.getP(), params.getPn());
+        if (students == null || students.isEmpty()) {
+            return ResponseResult.success();
+        }
+
+        log.info("student detail success");
+        return ResponseResult.success(new PageInfo <Student>(students));
     }
 
     @GetMapping("/detail")

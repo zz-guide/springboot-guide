@@ -1,5 +1,6 @@
 package org.zz.demo1.config;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ZzConfiguration2Tests {
 
-    @Autowired
+    @Resource
     private ZzConfiguration2 configuration;
 
     @Test

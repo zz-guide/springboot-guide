@@ -1,13 +1,17 @@
 package org.zz.demo1.mapper;
 
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.session.RowBounds;
 import org.zz.demo1.domain.entity.Student;
 import java.util.List;
 
 @Mapper
 public interface StudentMapper {
+
     @Select("select * from student")
     public List<Student> findAll();
+
+    public List<Student> findAll(RowBounds rowBounds);
 
     @Select("select * from student where id = #{id};")
     public Student findById(Long id);
@@ -24,4 +28,16 @@ public interface StudentMapper {
 
     @Select("select * from student where name = #{name};")
     public Student findByName(String name);
+
+    @Insert("<script> " +
+            "insert into student" +
+            "(name, age) " +
+            "values " +
+            "<foreach collection=\"students\" index=\"index\" item=\"item\" separator=\",\"> "
+            +
+            "(#{item.name},#{item.age})"
+            +
+            "</foreach> " +
+            "</script>")
+    public int batchSave(@Param("students") List<Student> students);
 }

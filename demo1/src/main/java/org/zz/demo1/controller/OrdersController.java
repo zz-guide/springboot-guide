@@ -6,8 +6,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.zz.demo1.common.ResponseResult;
 import org.zz.demo1.domain.entity.Orders;
-import org.zz.demo1.domain.api.orders.OrdersCreateRequest;
-import org.zz.demo1.domain.api.orders.OrdersInfoRequest;
+import org.zz.demo1.domain.request.OrdersCreateRequest;
+import org.zz.demo1.domain.request.OrdersInfoRequest;
 import org.zz.demo1.service.OrdersService;
 
 import java.util.UUID;

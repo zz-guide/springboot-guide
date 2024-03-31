@@ -1,4 +1,4 @@
-package org.zz.demo1.domain.api.user;
+package org.zz.demo1.domain.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserOrderListResponse {
+public class UserOrderListVo {
     private Long id;
     private String name;
     private String username;

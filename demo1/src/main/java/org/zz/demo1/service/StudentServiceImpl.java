@@ -1,6 +1,7 @@
 package org.zz.demo1.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.github.pagehelper.PageHelper;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.zz.demo1.domain.entity.Student;
 import org.zz.demo1.mapper.StudentMapper;
@@ -9,12 +10,17 @@ import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
-    @Autowired
+    @Resource
     private StudentMapper studentMapper;
 
     @Override
-    public List<Student> findAll() {
-        return null;
+    public List<Student> findAll(Integer p, Integer pn) {
+        if (p != null && pn != null) {
+            PageHelper.startPage(p, pn);
+        }
+
+        PageHelper.orderBy("id desc");
+        return studentMapper.findAll();
     }
 
     @Override
@@ -25,6 +31,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findByName(String name) {
         return studentMapper.findByName(name);
+    }
+
+    @Override
+    public boolean batchSave(List<Student> students) {
+        int affectedRows = studentMapper.batchSave(students);
+        return affectedRows > 0;
     }
 
     @Override

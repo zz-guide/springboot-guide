@@ -1,4 +1,4 @@
-package org.zz.demo1.domain.api.valid;
+package org.zz.demo1.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ValidPost1 {
-    private String name;
-    private Integer age;
+public class UserDto {
+    private String username;
+    private int age;
+    private boolean young;
 }

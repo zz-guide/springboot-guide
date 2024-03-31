@@ -23,7 +23,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <spring.boot.version>3.2.4</spring.boot.version>
-        <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok.version>1.18.30</lombok.version>
         <mysql.connector.j.version>8.3.0</mysql.connector.j.version>
         <druid.spring.boot.starter.version>1.2.22</druid.spring.boot.starter.version>
@@ -32,6 +31,8 @@
         <junit.jupiter.api.version>5.10.2</junit.jupiter.api.version>
         <slf4j.reload4j.version>2.0.12</slf4j.reload4j.version>
         <commons.lang3.version>3.14.0</commons.lang3.version>
+        <mapstruct.plus.version>1.4.0</mapstruct.plus.version>
+        <pagehelper.spring.boot.starter.version>2.1.0</pagehelper.spring.boot.starter.version>
     </properties>
 
     <modules>
@@ -85,13 +86,6 @@
                 <version>${commons.lang3.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${mapstruct.version}</version>
-            </dependency>
-
             <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -134,6 +128,20 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
                 <version>${spring.boot.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.github.linpeilie/mapstruct-plus-spring-boot-starter -->
+            <dependency>
+                <groupId>io.github.linpeilie</groupId>
+                <artifactId>mapstruct-plus-spring-boot-starter</artifactId>
+                <version>${mapstruct.plus.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.spring.boot.starter.version}</version>
             </dependency>
 
         </dependencies>

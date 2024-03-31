@@ -1,4 +1,4 @@
-package org.zz.demo1.domain.api.valid;
+package org.zz.demo1.domain.request;
 
 
 import lombok.AllArgsConstructor;
