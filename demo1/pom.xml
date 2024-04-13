@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.zz</groupId>
-        <artifactId>spring-boot-guide</artifactId>
+        <artifactId>springboot-guide</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
