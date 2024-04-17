@@ -9,6 +9,7 @@
         <version>3.2.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>org.zz</groupId>
     <artifactId>springboot-guide</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -37,11 +38,11 @@
 
     <modules>
         <module>demo1</module>
+        <module>demo2</module>
+        <module>demo3</module>
     </modules>
     <dependencyManagement>
         <dependencies>
-
-
             <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -144,19 +145,46 @@
                 <version>${pagehelper.spring.boot.starter.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity6 -->
+            <dependency>
+                <groupId>org.thymeleaf.extras</groupId>
+                <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+                <version>3.1.2.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-test</artifactId>
+                <version>6.2.3</version>
+                <scope>test</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
     <repositories>
         <repository>
-            <id>nexus-aliyun</id>
-            <name>nexus-aliyun</name>
-            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <id>aliyun-public</id>
+            <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>

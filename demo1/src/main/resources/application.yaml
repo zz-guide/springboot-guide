@@ -1,5 +1,9 @@
 server:
   port: 8999
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /demo1
 logging:
   file:
     path: logs
@@ -53,6 +57,14 @@ spring:
     #    maxPoolPreparedStatementPerConnectionSize: 20
     #    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     #    useGlobalDataSourceStat: true
+  mvc:
+    # URL响应地址（Springboot默认为/**)
+    static-path-pattern: /abc/**
+  web:
+    resources:
+      static-locations:
+      - file:E:\jungle\github\zz-guide\springboot-guide\demo1\abc
+      - classpath:/admin/admin/
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

@@ -19,4 +19,9 @@ public class HelloController {
     public String test(@PathVariable("id") Integer id) {
         return aopLogService.test(id);
     }
+
+    @GetMapping("/world")
+    public String world() {
+        return "hello world";
+    }
 }
