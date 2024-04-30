@@ -20,6 +20,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
         // 配置文件方式虽简单，但不够灵活，多个静态资源可能冲突
         // 自定义静态资源路径
+        registry.addResourceHandler("/uploads/**").addResourceLocations("classpath:/uploads/");
         registry.addResourceHandler("/front/**").addResourceLocations("classpath:/front/front/");
     }
 }

@@ -9,3 +9,4 @@
 - demo1 springboot基础
 - demo2 mybatis-flex
 - demo3 springboot security
+- demo4 mybatis generator

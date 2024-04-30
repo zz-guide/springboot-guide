@@ -1,6 +1,7 @@
 package org.zz.demo1.domain.request;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,14 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentUpdateRequest {
+public class StudentDeleteRo {
     @Min(value = 1, message = "id必须大于0")
     @NotNull(message = "id不能为空")
     private Long id;
-
-    private String name;
-
-    @Min(value=1, message = "年龄必须大于0")
-    @Max(value=150, message = "年龄必须小于150")
-    private int age;
 }

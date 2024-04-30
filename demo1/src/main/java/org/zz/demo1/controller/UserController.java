@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import org.zz.demo1.common.ResponseResult;
 import org.zz.demo1.domain.vo.UserOrderListVo;
 import org.zz.demo1.domain.entity.User;
-import org.zz.demo1.domain.request.UserCreateRequest;
-import org.zz.demo1.domain.request.UserOrderListRequest;
+import org.zz.demo1.domain.request.UserCreateRo;
+import org.zz.demo1.domain.request.UserOrderListRo;
 import org.zz.demo1.service.UserService;
 
 @RestController
@@ -18,7 +18,7 @@ public class UserController {
 
 
     @PostMapping("/create")
-    public ResponseResult<?> create(@Valid @RequestBody UserCreateRequest params) {
+    public ResponseResult<?> create(@Valid @RequestBody UserCreateRo params) {
         if (userService.findByUsername(params.getUsername()) != null) {
             return ResponseResult.fail("账号已存在，请更换");
         }
@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/orderList")
-    public ResponseResult<?> orderList(@Valid UserOrderListRequest params) {
+    public ResponseResult<?> orderList(@Valid UserOrderListRo params) {
         System.out.println("user_id:" + params.getUserId());
         var user = userService.findById(params.getUserId());
         // 返回结果可以优化

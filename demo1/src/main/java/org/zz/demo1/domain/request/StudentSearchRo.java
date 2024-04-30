@@ -9,8 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentDetailRequest {
-    @NotNull(message = "id不能为空")
-    @Min(value = 1, message = "id必须大于0")
-    private Long id;
+public class StudentSearchRo {
+    @NotNull(message = "p不能为空")
+    @Min(value=1, message = "年龄必须大于0")
+    private Integer p;
+
+    @NotNull(message = "pn不能为空")
+    @Min(value=1, message = "pn必须大于0")
+    private Integer pn;
 }

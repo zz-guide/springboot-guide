@@ -40,6 +40,8 @@
         <module>demo1</module>
         <module>demo2</module>
         <module>demo3</module>
+        <module>demo4</module>
+        <module>mybatis-plugin</module>
     </modules>
     <dependencyManagement>
         <dependencies>

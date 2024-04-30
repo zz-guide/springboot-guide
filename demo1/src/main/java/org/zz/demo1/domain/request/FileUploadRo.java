@@ -1,14 +1,13 @@
 package org.zz.demo1.domain.request;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrdersInfoRequest {
-    @NotNull(message = "用户不能为空")
-    private Long id;
+public class FileUploadRo {
+    private MultipartFile file;
 }

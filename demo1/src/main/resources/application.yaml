@@ -1,4 +1,5 @@
 server:
+  address: 127.0.0.1
   port: 8999
   tomcat:
     uri-encoding: UTF-8
@@ -57,20 +58,22 @@ spring:
     #    maxPoolPreparedStatementPerConnectionSize: 20
     #    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     #    useGlobalDataSourceStat: true
-  mvc:
-    # URL响应地址（Springboot默认为/**)
-    static-path-pattern: /abc/**
-  web:
-    resources:
-      static-locations:
-      - file:E:\jungle\github\zz-guide\springboot-guide\demo1\abc
-      - classpath:/admin/admin/
+#  mvc:
+#    # URL响应地址（Springboot默认为/**)
+#    static-path-pattern: /abc/**
+#  web:
+#    resources:
+#      static-locations:
+#      - file:E:\jungle\github\zz-guide\springboot-guide\demo1\abc
+#      - classpath:/admin/admin/
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: org.zz.demo1.entity
   configuration:
     map-underscore-to-camel-case: true
+
+uploads: "/uploads/"
 
 zz:
   name: "仔仔123"

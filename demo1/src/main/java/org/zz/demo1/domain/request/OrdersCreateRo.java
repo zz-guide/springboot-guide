@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrdersCreateRequest {
+public class OrdersCreateRo {
     @JsonProperty("user_id")
     @NotNull(message = "用户不能为空")
     private Long userId;

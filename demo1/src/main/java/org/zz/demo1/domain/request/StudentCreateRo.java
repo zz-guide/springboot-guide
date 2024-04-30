@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentCreateRequest {
+public class StudentCreateRo {
     @NotBlank(message = "姓名不能为空")
     private String name;
 

@@ -14,9 +14,9 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         // 在请求到达处理器之前执行，可以用于权限验证、数据校验等操作。如果返回true，则继续执行后续操作；如果返回false，则中断请求处理。
 
-        HttpSession session = request.getSession();
-        System.out.println("session name:" + session.getAttribute("name"));
-        System.out.println("preHandle: " + request.getRequestURI());
+//        HttpSession session = request.getSession();
+//        System.out.println("session name:" + session.getAttribute("name"));
+//        System.out.println("preHandle: " + request.getRequestURI());
         return true;
     }
 
