@@ -10,6 +10,7 @@
         <module name="demo3" />
         <module name="mybatis-plugin" />
         <module name="demo4" />
+        <module name="demo5" />
         <module name="demo2" />
       </profile>
       <profile name="Annotation profile for springboot-guide" enabled="true">
@@ -36,6 +37,7 @@
       <module name="demo2" options="-parameters" />
       <module name="demo3" options="-parameters" />
       <module name="demo4" options="-parameters" />
+      <module name="demo5" options="-parameters" />
       <module name="mybatis-plugin" options="-parameters" />
     </option>
   </component>

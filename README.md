@@ -10,3 +10,5 @@
 - demo2 mybatis-flex
 - demo3 springboot security
 - demo4 mybatis generator
+- mybatis-plugin mybatis generator 自定义lombok插件
+- zfb-sandbox集成支付宝沙箱支付
