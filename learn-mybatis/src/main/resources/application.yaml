@@ -1,0 +1,15 @@
+server:
+  address: 127.0.0.1
+  port: 8999
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /learn_satoken
+
+spring:
+  application:
+    name: learn-satoken
+  datasource:
+    url: jdbc:mysql://192.168.200.253:3306/test
+    username: root
+    password: root

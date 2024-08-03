@@ -1,0 +1,11 @@
+server:
+  address: 127.0.0.1
+  port: 8999
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /learn_redis
+
+spring:
+  application:
+    name: learn-redis

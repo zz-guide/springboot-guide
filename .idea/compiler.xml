@@ -7,29 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo3" />
-        <module name="mybatis-plugin" />
-        <module name="demo4" />
-        <module name="demo5" />
-        <module name="demo2" />
-      </profile>
-      <profile name="Annotation profile for springboot-guide" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/github/linpeilie/mapstruct-plus-processor/1.4.0/mapstruct-plus-processor-1.4.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/github/linpeilie/mapstruct-plus/1.4.0/mapstruct-plus-1.4.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/github/linpeilie/mapstruct-plus-object-convert/1.4.0/mapstruct-plus-object-convert-1.4.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/com/baidu/lbsyun/javapoet/1.9.0/javapoet-1.9.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
-        </processorPath>
-        <module name="demo1" />
+        <module name="learn-mybatis" />
+        <module name="learn-mybatis-plus" />
+        <module name="learn-redis" />
+        <module name="learn-spring-security" />
+        <module name="learn-mybatis-flex" />
+        <module name="learn-boot" />
+        <module name="learn-jpa" />
+        <module name="learn-satoken" />
+        <module name="learn-redisson" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo1" target="17" />
+      <module name="demo2" target="17" />
+      <module name="demo3" target="17" />
+      <module name="demo4" target="17" />
+      <module name="demo5" target="17" />
+      <module name="learn-boot (1)" target="17" />
+      <module name="learn-boot (2)" target="17" />
+      <module name="mybatis-plugin" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -38,6 +36,16 @@
       <module name="demo3" options="-parameters" />
       <module name="demo4" options="-parameters" />
       <module name="demo5" options="-parameters" />
+      <module name="learn-boot" options="-parameters" />
+      <module name="learn-boot (1)" options="-parameters" />
+      <module name="learn-jpa" options="-parameters" />
+      <module name="learn-mybatis" options="-parameters" />
+      <module name="learn-mybatis-flex" options="-parameters" />
+      <module name="learn-mybatis-plus" options="-parameters" />
+      <module name="learn-redis" options="-parameters" />
+      <module name="learn-redisson" options="-parameters" />
+      <module name="learn-satoken" options="-parameters" />
+      <module name="learn-spring-security" options="-parameters" />
       <module name="mybatis-plugin" options="-parameters" />
     </option>
   </component>
