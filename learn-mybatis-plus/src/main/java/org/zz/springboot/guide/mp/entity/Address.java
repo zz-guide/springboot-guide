@@ -14,12 +14,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName("r_user")
-public class RUser {
-    @TableId(type = IdType.AUTO)
+@TableName("address")
+public class Address {
+    @TableId(type=IdType.AUTO)
     private Long id;
-    private String username;
-    private String  password;
+
     private String name;
     private LocalDateTime createdAt;
     private LocalDateTime  updatedAt;

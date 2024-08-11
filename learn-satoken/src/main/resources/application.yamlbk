@@ -41,14 +41,8 @@ sa-token:
   token-style: uuid
   # 是否输出操作日志
   is-log: true
-  # Token前缀，例如 Bearer
-  token-prefix:
-  jwt-secret-key: zz123321
-  sign:
-    secret-key: kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
-    timestamp_disparity: 3
-
   alone-redis:
+    pattern: single
     database: 2
     host: 192.168.200.253
     port: 6379

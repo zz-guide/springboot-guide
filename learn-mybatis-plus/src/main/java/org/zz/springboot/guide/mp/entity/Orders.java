@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 public class Orders {
     @TableId(type=IdType.AUTO)
     private Long id;
+
     private String sn;
     private Long  userId;
     private LocalDateTime createdAt;

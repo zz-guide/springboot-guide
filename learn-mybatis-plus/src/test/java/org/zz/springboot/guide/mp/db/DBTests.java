@@ -1,4 +1,4 @@
-package org.zz.springboot.guide.mp;
+package org.zz.springboot.guide.mp.db;
 
 import com.baomidou.mybatisplus.extension.toolkit.Db;
 import jakarta.annotation.Resource;
@@ -17,7 +17,7 @@ class DBTests {
     UserMapper userMapper;
 
     @Test
-    void contextLoads() {
+    void testStaticCall() {
         // 静态调用，有个缺点就是不能动态设置字段
         List<User> users = Db.listByIds(Arrays.asList(1L, 2L), User.class);
         System.out.println(users);

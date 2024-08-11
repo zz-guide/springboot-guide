@@ -14,6 +14,9 @@
     <name>learn-redisson</name>
     <description>learn-redisson</description>
 
+    <properties>
+        <redisson.spring.boot.starter.version>3.34.1</redisson.spring.boot.starter.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -36,9 +39,8 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson-spring-boot-starter</artifactId>
-            <version>3.34.1</version>
+            <version>${redisson.spring.boot.starter.version}</version>
         </dependency>
-
 
     </dependencies>
 
